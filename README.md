@@ -1,14 +1,15 @@
 ## Clojure
 
 ### Resources
- - ://
+ - [Clojure for the Brave and True](https://www.braveclojure.com/)
+ - [Clojure на производстве](https://grishaev.me/assets/static/aws/clojure_book/clojure_excerpt.pdf)
 
 ### Tools
- - Compiler: ://
- - Interpreter*: ://
- - lint tools: ://
- - testing: ://
- - formatting: ://
+ - Compiler: Clojure CLI tools
+ - Interpreter*: REPL
+ - Lint tools: clj-kondo
+ - Testing: clojure.test
+ - Formatting: cljfmt
 
 ### Essay
 Изначально я хотел выбрать Haskell в качестве языка для прохождения курса, так как мне уже приходилось писать на нём, хоть и немного. Однако, ознакомившись с другими языками, мной был выбран Clojure и на то есть несколько причин.
