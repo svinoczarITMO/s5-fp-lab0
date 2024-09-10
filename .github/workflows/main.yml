@@ -1,12 +1,15 @@
-steps:
-- uses: action/setup-clj-kondo@v1
-  with:
-    version: '2019.11.23'
+on: push
+name: Push / PR Builder
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install clj-kondo
+      uses: DeLaGuardo/setup-clj-kondo@afc83dbbf4e7e32e04649e29dbf30668d30e9e3e
+      with:
+        version: '2022.01.15'
 
-- uses: actions/checkout@latest
+    - uses: actions/checkout@v2
 
-- name: Run on ubuntu or macosx
-  run: clj-kondo --lint src
-
-- name: Run on windows
-  run: clj-kondo.exe --lint src
+    - name: Lint
+      run: clj-kondo --lint src --config '{:output {:pattern "::{{level}} file={{filename}},line={{row}},col={{col}}::{{message}}"}}'
