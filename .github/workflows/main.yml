@@ -1,0 +1,12 @@
+steps:
+- uses: action/setup-clj-kondo@v1
+  with:
+    version: '2019.11.23'
+
+- uses: actions/checkout@latest
+
+- name: Run on ubuntu or macosx
+  run: clj-kondo --lint src
+
+- name: Run on windows
+  run: clj-kondo.exe --lint src
